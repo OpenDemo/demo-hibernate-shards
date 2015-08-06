@@ -1,0 +1,437 @@
+[WARN ] 2015-08-06 14:45:36,491(274) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:45:36,544(327) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:45:36,569(352) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:45:37,252(1035) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 14:45:37,536(1319) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 14:45:37,716(1499) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:233) –> [main] SQL Error: 1264, SQLState: 22001  
+[ERROR] 2015-08-06 14:45:37,716(1499) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[WARN ] 2015-08-06 14:45:37,717(1500) org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:127) –> [main] exception commiting underlying transaction  
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:102)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:184)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:51)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1216)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:383)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:133)
+	at org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:125)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.ShardsTestCreate(Main.java:108)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.HibernateShardsTest(Main.java:81)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.main(Main.java:30)
+Caused by: java.sql.BatchUpdateException: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2054)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 11 more
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2006)
+	... 14 more
+[WARN ] 2015-08-06 14:47:04,973(311) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:47:05,031(369) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:47:05,058(396) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:47:05,806(1144) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 14:47:06,422(1760) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@19fdbcb after already scoped org.hibernate.impl.SessionFactoryImpl@13c550f  
+[WARN ] 2015-08-06 14:47:06,901(2239) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:233) –> [main] SQL Error: 1264, SQLState: 22001  
+[ERROR] 2015-08-06 14:47:06,901(2239) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[WARN ] 2015-08-06 14:47:06,901(2239) org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:127) –> [main] exception commiting underlying transaction  
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:102)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:184)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:51)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1216)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:383)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:133)
+	at org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:125)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.ShardsTestCreate(Main.java:108)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.HibernateShardsTest(Main.java:81)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.main(Main.java:30)
+Caused by: java.sql.BatchUpdateException: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2054)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 11 more
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2006)
+	... 14 more
+[WARN ] 2015-08-06 14:49:57,643(279) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:49:57,715(351) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:49:57,740(376) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:49:58,454(1090) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 14:49:58,730(1366) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 14:49:58,940(1576) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:233) –> [main] SQL Error: 1264, SQLState: 22001  
+[ERROR] 2015-08-06 14:49:58,940(1576) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[WARN ] 2015-08-06 14:49:58,940(1576) org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:127) –> [main] exception commiting underlying transaction  
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:102)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:184)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:51)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1216)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:383)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:133)
+	at org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:125)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.ShardsTestCreate(Main.java:109)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.HibernateShardsTest(Main.java:82)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.main(Main.java:31)
+Caused by: java.sql.BatchUpdateException: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2054)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 11 more
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2006)
+	... 14 more
+[WARN ] 2015-08-06 14:51:36,794(277) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:51:36,849(332) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:51:37,081(564) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:51:37,089(572) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:51:37,124(607) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:53:05,056(273) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:53:05,110(327) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:53:05,130(347) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:53:05,825(1042) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 14:53:06,091(1308) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 14:53:06,269(1486) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:233) –> [main] SQL Error: 1264, SQLState: 22001  
+[ERROR] 2015-08-06 14:53:06,269(1486) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[WARN ] 2015-08-06 14:53:06,270(1487) org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:127) –> [main] exception commiting underlying transaction  
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:102)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:184)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:51)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1216)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:383)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:133)
+	at org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:125)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.ShardsTestCreate(Main.java:110)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.HibernateShardsTest(Main.java:83)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.main(Main.java:32)
+Caused by: java.sql.BatchUpdateException: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2054)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 11 more
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2006)
+	... 14 more
+[WARN ] 2015-08-06 14:53:36,338(294) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:53:36,395(351) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:53:36,420(376) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:53:37,120(1076) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 14:53:37,394(1350) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  
+[WARN ] 2015-08-06 14:53:37,585(1541) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:233) –> [main] SQL Error: 1264, SQLState: 22001  
+[ERROR] 2015-08-06 14:53:37,585(1541) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[WARN ] 2015-08-06 14:53:37,586(1542) org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:127) –> [main] exception commiting underlying transaction  
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:102)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:184)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:51)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1216)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:383)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:133)
+	at org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:125)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.ShardsTestCreate(Main.java:110)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.HibernateShardsTest(Main.java:83)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.main(Main.java:32)
+Caused by: java.sql.BatchUpdateException: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2054)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 11 more
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2006)
+	... 14 more
+[WARN ] 2015-08-06 14:54:08,384(288) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:54:08,442(346) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:54:08,468(372) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:54:09,191(1095) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 14:54:09,497(1401) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 14:58:57,614(308) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:58:57,672(366) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:58:57,696(390) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:58:58,402(1096) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 14:58:58,710(1404) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@198c6f3  
+[WARN ] 2015-08-06 14:58:58,911(1605) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:233) –> [main] SQL Error: 1264, SQLState: 22001  
+[ERROR] 2015-08-06 14:58:58,912(1606) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[WARN ] 2015-08-06 14:58:58,912(1606) org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:127) –> [main] exception commiting underlying transaction  
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:102)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:184)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:51)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1216)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:383)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:133)
+	at org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:125)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.ShardsTestCreate(Main.java:110)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.HibernateShardsTest(Main.java:83)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.main(Main.java:32)
+Caused by: java.sql.BatchUpdateException: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2054)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 11 more
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2006)
+	... 14 more
+[WARN ] 2015-08-06 14:59:26,855(284) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:59:26,910(339) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:59:26,935(364) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 14:59:27,613(1042) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 14:59:27,889(1318) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@82674b after already scoped org.hibernate.impl.SessionFactoryImpl@198c6f3  
+[WARN ] 2015-08-06 14:59:28,062(1491) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:233) –> [main] SQL Error: 1264, SQLState: 22001  
+[ERROR] 2015-08-06 14:59:28,062(1491) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[WARN ] 2015-08-06 14:59:28,062(1491) org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:127) –> [main] exception commiting underlying transaction  
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:102)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:184)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:51)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1216)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:383)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:133)
+	at org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:125)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.ShardsTestCreate(Main.java:110)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.HibernateShardsTest(Main.java:83)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.main(Main.java:32)
+Caused by: java.sql.BatchUpdateException: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2054)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 11 more
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2006)
+	... 14 more
+[WARN ] 2015-08-06 15:06:18,751(270) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:06:18,806(325) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:06:18,838(357) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:06:19,516(1035) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:06:19,785(1304) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@198c6f3  
+[WARN ] 2015-08-06 15:06:19,965(1484) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:233) –> [main] SQL Error: 1264, SQLState: 22001  
+[ERROR] 2015-08-06 15:06:19,965(1484) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[WARN ] 2015-08-06 15:06:19,965(1484) org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:127) –> [main] exception commiting underlying transaction  
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:102)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:275)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:268)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:184)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:321)
+	at org.hibernate.event.def.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:51)
+	at org.hibernate.impl.SessionImpl.flush(SessionImpl.java:1216)
+	at org.hibernate.impl.SessionImpl.managedFlush(SessionImpl.java:383)
+	at org.hibernate.transaction.JDBCTransaction.commit(JDBCTransaction.java:133)
+	at org.hibernate.shards.transaction.ShardedTransactionImpl.commit(ShardedTransactionImpl.java:125)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.ShardsTestCreate(Main.java:110)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.HibernateShardsTest(Main.java:83)
+	at cn.cjp.demo.hibernate.shards.annotation.Main.main(Main.java:32)
+Caused by: java.sql.BatchUpdateException: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2054)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1467)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:70)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:268)
+	... 11 more
+Caused by: com.mysql.jdbc.MysqlDataTruncation: Data truncation: Out of range value for column 'ID' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4094)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2734)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:2006)
+	... 14 more
+[WARN ] 2015-08-06 15:06:39,893(300) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:06:39,948(355) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:06:39,972(379) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:06:40,704(1111) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:06:41,280(1687) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@dac21 after already scoped org.hibernate.impl.SessionFactoryImpl@8a52b6  
+[WARN ] 2015-08-06 15:07:47,867(272) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:07:47,920(325) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:07:47,942(347) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:07:48,613(1018) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:07:48,893(1298) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  
+[WARN ] 2015-08-06 15:08:18,013(284) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:08:18,065(336) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:08:18,092(363) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:08:18,806(1077) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:08:19,088(1359) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:10:55,082(254) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:10:55,133(305) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:10:55,158(330) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:10:55,835(1007) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:10:56,085(1257) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  
+[WARN ] 2015-08-06 15:11:08,148(261) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:08,198(311) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:08,222(335) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:08,868(981) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:11:09,111(1224) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:11:22,853(286) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:22,908(341) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:22,929(362) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:23,569(1002) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:11:23,826(1259) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:11:35,453(258) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:35,506(311) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:35,531(336) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:11:36,165(970) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:11:36,398(1203) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:12:41,983(283) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:12:42,041(341) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:12:42,061(361) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:12:42,738(1038) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:12:42,997(1297) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:14:04,517(293) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:14:04,571(347) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:14:04,598(374) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:14:05,285(1061) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:14:05,550(1326) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:17:00,960(278) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:01,013(331) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:01,039(357) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:01,715(1033) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:17:01,979(1297) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  
+[WARN ] 2015-08-06 15:17:18,226(279) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:18,281(334) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:18,302(355) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:18,980(1033) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:17:19,245(1298) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  
+[WARN ] 2015-08-06 15:17:34,044(273) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:34,097(326) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:34,126(355) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:17:34,826(1055) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:17:35,099(1328) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  
+[WARN ] 2015-08-06 15:18:16,133(283) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:18:16,188(338) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:18:16,214(364) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:18:16,912(1062) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:18:17,178(1328) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@13fba1 after already scoped org.hibernate.impl.SessionFactoryImpl@2a987d  
+[WARN ] 2015-08-06 15:18:34,034(304) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:18:34,093(363) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:18:34,117(387) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:18:34,843(1113) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:18:35,123(1393) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  
+[WARN ] 2015-08-06 15:22:15,726(284) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:22:15,780(338) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:22:15,807(365) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:22:16,504(1062) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:22:16,759(1317) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:30:13,342(292) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:30:13,397(347) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:30:13,417(367) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:30:14,104(1054) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:30:14,369(1319) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@198c6f3  
+[WARN ] 2015-08-06 15:30:27,194(300) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:30:27,250(356) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:30:27,276(382) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:30:27,963(1069) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:30:28,231(1337) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:42:05,074(282) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:42:05,128(336) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:42:05,151(359) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:42:05,853(1061) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:42:06,115(1323) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 15:48:43,769(289) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:48:43,824(344) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:48:43,851(371) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:48:44,570(1090) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:48:44,836(1356) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@198c6f3  
+[WARN ] 2015-08-06 15:54:15,996(299) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:54:16,054(357) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:54:16,081(384) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 15:54:16,851(1154) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 15:54:17,160(1463) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1eb9fde after already scoped org.hibernate.impl.SessionFactoryImpl@1b7a553  
+[WARN ] 2015-08-06 16:00:34,980(298) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:00:35,042(360) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:00:35,069(387) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:00:35,799(1117) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 16:00:36,092(1410) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  
+[WARN ] 2015-08-06 16:01:40,804(286) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:01:40,861(343) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:01:40,885(367) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:01:41,591(1073) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 16:01:41,869(1351) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@1ed27e4 after already scoped org.hibernate.impl.SessionFactoryImpl@813bc1  
+[WARN ] 2015-08-06 16:03:41,976(289) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:03:42,026(339) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:03:42,047(360) org.hibernate.util.DTDEntityResolver.resolveEntity(DTDEntityResolver.java:73) –> [main] recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!  
+[WARN ] 2015-08-06 16:03:42,825(1138) org.hibernate.id.UUIDHexGenerator.<init>(UUIDHexGenerator.java:58) –> [main] Using org.hibernate.shards.id.ShardedUUIDGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead  
+[WARN ] 2015-08-06 16:03:43,084(1397) org.hibernate.type.TypeFactory$TypeScopeImpl.injectSessionFactory(TypeFactory.java:69) –> [main] Scoping types to session factory org.hibernate.impl.SessionFactoryImpl@d61aef after already scoped org.hibernate.impl.SessionFactoryImpl@7a36a2  

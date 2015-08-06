@@ -1,0 +1,8 @@
+[ERROR] 2015-08-06 14:45:37,716(1499) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[ERROR] 2015-08-06 14:47:06,901(2239) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[ERROR] 2015-08-06 14:49:58,940(1576) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[ERROR] 2015-08-06 14:53:06,269(1486) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[ERROR] 2015-08-06 14:53:37,585(1541) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[ERROR] 2015-08-06 14:58:58,912(1606) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[ERROR] 2015-08-06 14:59:28,062(1491) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
+[ERROR] 2015-08-06 15:06:19,965(1484) org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:234) –> [main] Data truncation: Out of range value for column 'ID' at row 1  
