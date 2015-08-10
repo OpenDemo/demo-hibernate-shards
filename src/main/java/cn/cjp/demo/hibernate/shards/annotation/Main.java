@@ -37,12 +37,12 @@ public class Main {
 		// 加载主配置文件，为每个shard创建SessionFactory对象时将
 		// 以他作为原型
 		AnnotationConfiguration prototypeCfg = new AnnotationConfiguration()
-				.configure("annotation/shard0.hibernate.cfg.xml");
+				.configure("conf/annotation/shard0.hibernate.cfg.xml");
 		prototypeCfg.addAnnotatedClass(ContactEntity.class);
 		// 每个shard的配置文件
 		List<ShardConfiguration> shardCfgs = new ArrayList<ShardConfiguration>();
-		shardCfgs.add(buildShardConfig("annotation/shard0.hibernate.cfg.xml"));
-		shardCfgs.add(buildShardConfig("annotation/shard1.hibernate.cfg.xml"));
+		shardCfgs.add(buildShardConfig("conf/annotation/shard0.hibernate.cfg.xml"));
+		shardCfgs.add(buildShardConfig("conf/annotation/shard1.hibernate.cfg.xml"));
 		// 数据切片策略的工厂对象
 		ShardStrategyFactory strategyFactory = buildShardStrategyFactory();
 		ShardedConfiguration shardedConfig = new ShardedConfiguration(
